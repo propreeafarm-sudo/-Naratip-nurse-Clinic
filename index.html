@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th"><head><meta name="clinic-release" content="3.4-20260915"><!-- GitHub Pages entry: index.html. Keep this name when uploading. --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1668c7"><title>คลินิกนราทิพย์การพยาบาล | ระบบบริหารคลินิก</title>
+<html lang="th"><head><meta name="clinic-release" content="3.5-20260915"><!-- GitHub Pages entry: index.html. Keep this name when uploading. --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1668c7"><title>คลินิกนราทิพย์การพยาบาล | ระบบบริหารคลินิก</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--blue-900:#0b3a6b;--blue-700:#0f56a3;--blue-600:#1668c7;--blue-500:#1f7ae0;--blue-400:#3b93ef;--sky:#3fb5f5;--blue-100:#dcecfb;--blue-50:#eef5fc;--bg:#f2f7fc;--white:#fff;--ink:#0f2a44;--muted:#5c7189;--line:#dbe6f1;--line-soft:#e9f0f7;--green:#0f9d6e;--green-bg:#e4f6ee;--amber:#c97a00;--amber-bg:#fff3dc;--red:#d3405c;--red-bg:#fdebef;--shadow:0 1px 2px rgba(15,42,68,.04),0 6px 18px rgba(15,42,68,.06);--shadow-lg:0 18px 50px rgba(11,58,107,.18);--radius:16px}
@@ -345,6 +345,77 @@ dialog:has(.wizard){width:min(920px,96vw)}
 .rvlist{margin:4px 0 0;padding-left:18px}
 .rvlist li{margin-bottom:4px}
 @media(max-width:820px){.wdot{min-width:0;padding:2px}.wlab{display:none}.wline{margin-bottom:0}.rvgrid{grid-template-columns:1fr}.wbody{min-height:0}.wnav{flex-wrap:wrap}}
+</style><style id="v35-style">
+/* v3.5 blue medicine bag */
+.medlabel.lb2{padding:var(--bag-top) 4mm 3mm;color:#0b2a4a;font-family:"Noto Sans Thai",Tahoma,sans-serif;font-size:var(--bag-font);line-height:1.3}
+.lb2 .label-content{font-size:.73em;line-height:1.2}
+.lb2 .label-content{display:block}
+.lb2 .label-content>*{margin:0 0 .9mm;display:block}
+.lb2 .lb-row,.lb2 .lb-meal,.lb2 .lb-times,.lb2 .lb-warn,.lb2 .lb-foot{display:flex}
+.lb2 .lb-meal,.lb2 .lb-times{display:grid}
+.lb2 .lb-head{background:#1565c0;color:#fff;border-radius:2.5mm;padding:1.5mm 2.5mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.lb2 .lb-brand{display:flex;align-items:center;gap:2.5mm}
+.lb2 .lb-brand img{width:9mm;height:9mm;border-radius:2mm;background:#fff}
+.lb2 .lb-brand b{display:block;font-size:1.02em;line-height:1.25}
+.lb2 .lb-brand small{display:block;font-size:.68em;color:#dbe9ff;line-height:1.25;overflow:hidden;max-height:2.6em}
+.lb2 .lb-row{display:flex;gap:3mm;align-items:flex-end}
+.lb2 .lb-f{display:flex;flex-direction:column;border-bottom:1px dotted #7fa6d4;padding-bottom:.5mm;min-width:0}
+.lb2 .lb-f.grow{flex:1}
+.lb2 .lb-f label{font-size:.75em;color:#1565c0;line-height:1.2}
+.lb2 .lb-f label small,.lb2 .lb-o small,.lb2 .lb-when small{font-size:.62em;color:#6a8db5;font-weight:400}
+.lb2 .lb-f b{font-size:1.05em;overflow-wrap:anywhere}
+.lb2 .lb-drug{font-size:1.3em!important}
+.lb2 u{text-decoration:none;border-bottom:1px solid #0b2a4a;padding:0 1.5mm;font-weight:700}
+.lb2 .lb-o{display:inline-flex;align-items:center;gap:1.4mm;font-weight:600;line-height:1.15}
+.lb2 .lb-o i{width:3.6mm;height:3.6mm;border:1.5px solid #1565c0;border-radius:50%;flex-shrink:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.lb2 .lb-o.on i{background:#1565c0;box-shadow:inset 0 0 0 .7mm #fff}
+.lb2 .lb-o em{display:inline-flex;width:5mm;height:5mm;border:1px solid #1565c0;border-radius:1mm;padding:.6mm;color:#1565c0;margin-left:auto}
+.lb2 .lb-o em svg{width:100%;height:100%}
+.lb2 .lb-meal{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
+.lb2 .lb-meal .lb-o{border:1.5px solid #1565c0;border-radius:3mm;padding:0 2.5mm;height:6mm;justify-content:center;box-sizing:border-box}
+.lb2 .lb-meal .lb-o.on{background:#e3efff}
+.lb2 .lb-times{display:grid;grid-template-columns:1fr 1fr;gap:1mm 4mm;padding:0 1mm}
+.lb2 .lb-times .lb-o{width:100%;height:5.2mm}
+.lb2 .lb-times .lb-o.on em{background:#1565c0;color:#fff}
+.lb2 .lb-when{align-items:center;gap:4mm;font-weight:600}
+.lb2 .lb-extra{flex-basis:100%;font-weight:500;color:#0b2a4a;font-size:.9em}
+.lb2 .lb-warn{border:1.5px solid #1565c0;border-radius:2.5mm;padding:1.5mm 2.5mm;display:flex;flex-wrap:wrap;row-gap:.8mm;font-size:.9em}
+.lb2 .lb-warn .lb-o{font-weight:500;flex:0 0 50%;box-sizing:border-box;padding-right:1mm}
+.lb2 .lb-warn .lb-o:last-child{flex-basis:100%}
+.lb2 .lb-oth{font-weight:600}
+.lb2 .lb-band{background:#1565c0;color:#fff;text-align:center;font-size:.78em;padding:1mm;border-radius:1.5mm;font-weight:600;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.lb2 .lb-foot{margin-top:1mm;display:flex;justify-content:space-between;gap:2mm;font-size:.72em;color:#345;flex-wrap:wrap}
+.label-print .printarea .lb2 p{margin:0}
+.label-print .printarea .lb2 .label-content{font-size:.73em}
+.label-print .printarea .lb2 .label-content{font-size:.73em;line-height:1.2}
+/* OPD card 1 หน้า A4 */
+.opd1{font-family:"Noto Sans Thai",Tahoma,sans-serif;font-size:9pt;line-height:1.35;color:#111}
+.opd1 .oh{display:flex;align-items:center;gap:5mm;border-bottom:2.5px solid #1565c0;padding-bottom:3mm;margin-bottom:3.5mm}
+.opd1 .oh img{width:16mm!important;height:16mm}
+.opd1 .ohc{flex:1;display:flex;flex-direction:column}
+.opd1 .ohc b{font-size:14pt;color:#0b3a6b}
+.opd1 .ohc span{font-size:8.5pt;color:#444}
+.opd1 .ohc .oht{font-size:11pt;font-weight:700;color:#1565c0;margin-top:1mm}
+.opd1 .ohn{border:1.5px solid #1565c0;border-radius:2mm;padding:2mm 4mm;text-align:center;min-width:40mm}
+.opd1 .ohn small{display:block;font-size:7.5pt;color:#1565c0}
+.opd1 .ohn b{display:block;font-size:14pt;letter-spacing:.5px}
+.opd1 .ogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5mm 3mm;margin-bottom:2.5mm}
+.opd1 .oc{border-bottom:1px solid #cfdcec;padding:.5mm 0 1mm;min-height:8mm}
+.opd1 .oc small{display:block;font-size:7pt;color:#1565c0}
+.opd1 .oc span{display:block;overflow-wrap:anywhere}
+.opd1 .w2{grid-column:span 2}.opd1 .w3{grid-column:span 3}
+.opd1 .oalg{border:1.5px solid #9fb8d6;border-radius:2mm;padding:1.5mm 3mm;margin:1mm 0 3mm;background:#f2f7fd}
+.opd1 .oalg.bad{border-color:#c62828;background:#fdecec;color:#7f1212}
+.opd1 .osec{font-size:10.5pt;color:#0b3a6b;margin:0 0 1.5mm;border-left:3px solid #1565c0;padding-left:2mm}
+.opd1 .osec span{font-weight:400;font-size:8.5pt;color:#555}
+.opd1 .ot{width:100%;border-collapse:collapse;font-size:8pt;table-layout:fixed;white-space:normal}
+.opd1 .ot th{background:#e3efff!important;color:#0b3a6b;border:1px solid #9fb8d6!important;padding:1.2mm 1.5mm!important;text-align:left;font-weight:700;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.opd1 .ot td{border:1px solid #9fb8d6!important;padding:1.2mm 1.5mm!important;vertical-align:top;overflow-wrap:anywhere}
+.opd1 .ot small{font-size:7pt;color:#333}
+.opd1 .ot tr.blank td{height:9mm}
+.opd1 .ofoot{display:flex;justify-content:space-between;gap:4mm;margin-top:5mm;font-size:8pt;color:#333;flex-wrap:wrap}
+@media print{.printarea:has(.opd1){padding:0!important}.opd1{break-inside:avoid}.opd1 .ot tr{break-inside:avoid}}
+@media screen{.opd1{max-width:190mm}}
 </style><style id="labelPageStyle"></style><style>.medlabel.medicine-bag{padding:var(--bag-top) 5mm 5mm;font-size:var(--bag-font);line-height:1.4}.medicine-bag .label-content{display:flex;flex-direction:column}.medicine-bag .label-content>*{flex-shrink:0}.medicine-bag .label-brand{font-size:10pt}.medicine-bag .drug-title{font-size:calc(var(--bag-font) + 1pt)}.medicine-bag .label-footer{margin-top:auto;padding-top:1mm}.label-patient,.label-warning{overflow-wrap:anywhere}
 @media print{html,body{margin:0!important}body.label-print .printarea{margin:0!important}body.label-print .printarea .medlabel p{margin:1mm 0;font-size:inherit;line-height:inherit}body.label-print .printarea .medlabel .label-meta{font-size:8pt}body.label-print .printarea .medlabel .drug-title{font-size:11pt}body.label-print .printarea .medicine-bag .drug-title{font-size:calc(var(--bag-font) + 1pt)}body.label-print .printarea .medlabel .label-brand img{width:6mm;height:6mm}body.label-print .medlabel{box-shadow:none}body.label-a4 .printarea{justify-content:start}body.label-print{background:#fff}}
 
@@ -383,7 +454,7 @@ dialog:has(.wizard){width:min(920px,96vw)}
     <div class="brand"><img id="brandLogo" alt="โลโก้คลินิก"><div><strong>คลินิกนราทิพย์</strong><small>การพยาบาลและการผดุงครรภ์</small></div></div>
     <div class="navlabel">เมนูหลัก</div>
     <nav id="nav"></nav>
-    <div class="sidefoot"><strong>คลินิกนราทิพย์การพยาบาล</strong>ระบบบริหารคลินิก v3.4.1 · 15/09/2569<div id="sidesync" class="syncpill"><i></i><span>กำลังเชื่อมต่อ</span></div></div>
+    <div class="sidefoot"><strong>คลินิกนราทิพย์การพยาบาล</strong>ระบบบริหารคลินิก v3.5 · 15/09/2569<div id="sidesync" class="syncpill"><i></i><span>กำลังเชื่อมต่อ</span></div></div>
   </aside>
   <div>
     <header class="topbar">
@@ -1230,6 +1301,42 @@ function wizReview(){const form=$('#visitForm'),g=n=>form.querySelector(`[name="
   const vs=[g('bpSys')&&g('bpDia')?'BP '+g('bpSys')+'/'+g('bpDia'):'',g('pulse')?'PR '+g('pulse'):'',g('respiration')?'RR '+g('respiration'):'',g('temperature')?'T '+g('temperature'):'',g('spo2')?'SpO2 '+g('spo2')+'%':'',g('weight')?'น้ำหนัก '+g('weight')+' กก.':''].filter(Boolean).join(' · ');const adv=checkedValues(form,'adviceOpt');
   $('#wReview').innerHTML=`<div class="rvgrid"><div><small>ผู้รับบริการ</small><b>${esc(p?.name||'—')}</b><span class="muted small">${esc(p?.hn||'')} · ${beDate(g('date'))}</span></div><div><small>บริการ</small><b>${esc(g('service')||'—')}</b><span class="muted small">${esc(g('symptom').slice(0,80))}</span></div><div><small>สัญญาณชีพ</small><b>${esc(vs||'—')}</b></div><div><small>การวินิจฉัย / ประเมิน</small><b>${esc(g('diagnosis')||g('assessment')||'—')}</b></div><div class="rvwide"><small>ยาและเวชภัณฑ์ (${$$('.drugline').length} รายการ)</small>${rows?`<ul class="rvlist">${rows}</ul>`:'<b>ไม่มีการจ่ายยา</b>'}</div><div class="rvwide"><small>การพยาบาลและคำแนะนำ</small><b>${esc(g('care')||'—')}</b><span class="muted small">${adv.length?'คำแนะนำ '+adv.length+' ข้อ':''}${g('followupDate')?' · นัด '+beDate(g('followupDate')):''}${g('referral')?' · ส่งต่อ '+esc(g('referral')):''}</span></div></div><p class="small muted" style="margin-top:8px">ตรวจสอบแล้วกรอกค่าบริการด้านล่าง กด “ยืนยันรับเงินและบันทึก” ระบบจะตัดคลังยาและลงรายรับทันที</p>`}
 // ปรับสุดท้าย: ถ้าเปิดฟอร์มจากรายชื่อผู้ป่วยแล้วกดถัดไปโดยไม่กรอกอาการ ให้ระบบเตือนที่ช่องนั้น (ใช้ reportValidity ปกติ)
+
+</script>
+<script id="clinic-v35">
+'use strict';
+// ===== v3.5 : OPD card 1 หน้า A4 · ซองยาแบบร้านยา โทนฟ้า =====
+function parseUsage(u=''){const s=String(u);const r={route:RX_ROUTES.find(x=>s.startsWith(x))||'',dose:'',unit:'',perDay:'',every:'',symptom:/เมื่อมีอาการ/.test(s),meal:/หลังอาหารทันที/.test(s)?'หลังอาหารทันที':/ก่อนอาหาร/.test(s)?'ก่อนอาหาร':/หลังอาหาร/.test(s)?'หลังอาหาร':'',times:RX_TIMES.filter(t=>new RegExp('(^|\\s)'+t+'(\\s|$)').test(s)),once:/ครั้งเดียว/.test(s)};let m=s.match(/ครั้งละ\s*([\d.]+)\s*([^\s]+)/);if(m){r.dose=m[1];r.unit=m[2]}m=s.match(/วันละ\s*(\d+)\s*ครั้ง/);if(m)r.perDay=m[1];m=s.match(/ทุก\s*([\d–\-]+)\s*ชม/);if(m)r.every=m[1];const known=[r.route,m?m[0]:'',/ครั้งละ\s*[\d.]+\s*[^\s]+/,/วันละ\s*\d+\s*ครั้ง/,/ทุก\s*[\d–\-]+\s*ชม\.?\s*เมื่อมีอาการ/,/เมื่อมีอาการ/,/ครั้งเดียว/,/หลังอาหารทันที|ก่อนอาหาร|หลังอาหาร/,...RX_TIMES];let rest=s;for(const k of known)if(k)rest=rest.replace(k,' ');r.extra=rest.replace(/\s+/g,' ').replace(/^[\s.·,]+/,'').trim();return r}
+const RX_WARN_SHORT={'ยานี้อาจทำให้ง่วงซึม ไม่ควรขับรถหรือทำงานกับเครื่องจักร':'ยานี้อาจทำให้ง่วงซึม','ห้ามดื่มสุราระหว่างใช้ยา':'ห้ามดื่มสุรา','รับประทานหลังอาหารทันที ยาอาจระคายเคืองกระเพาะ':'ทานยาหลังอาหารทันที','รับประทานติดต่อกันจนยาหมด แม้อาการดีขึ้น':'ทานติดต่อกันจนยาหมด','หยุดยาและพบแพทย์ทันทีหากมีผื่น บวม หรือหายใจลำบาก':'หยุดยาหากมีผื่น บวม หายใจลำบาก','ใช้ภายนอกเท่านั้น ห้ามรับประทาน':'ใช้ภายนอกเท่านั้น','ห้ามใช้เกินขนาดที่กำหนด':'ห้ามใช้เกินขนาด','เขย่าขวดก่อนใช้':'เขย่าขวดก่อนใช้','เก็บในตู้เย็น (2–8 °C)':'เก็บในตู้เย็น','เก็บให้พ้นแสงแดดและมือเด็ก':'เก็บพ้นแสงแดด/มือเด็ก','หลีกเลี่ยงแสงแดดจัดระหว่างใช้ยา':'เลี่ยงแสงแดดจัด','ห้ามใช้ในหญิงตั้งครรภ์ / ให้นมบุตร โดยไม่ปรึกษาแพทย์':'ห้ามใช้ขณะตั้งครรภ์/ให้นมบุตร','หากลืมรับประทาน ให้รับประทานทันทีที่นึกได้ ห้ามเพิ่มเป็น 2 เท่า':'ลืมกิน ห้ามเพิ่มเป็น 2 เท่า'};
+composeRx=(function(prev){return function(row){const u=prev(row);const w=row.querySelector('.rxWarning');if(w)w.value=checkedValues(row,'rxWarn').map(x=>RX_WARN_SHORT[x]||x).join(' · ');return u}})(composeRx);
+
+const LB_WARN=[['ก่อนอาหาร 30 นาที',/ก่อนอาหาร 30/],['ทานติดต่อกันจนยาหมด',/ติดต่อกันจนยาหมด/],['ทานยาหลังอาหารทันที',/หลังอาหารทันที/],['ยานี้อาจทำให้ง่วงซึม',/ง่วงซึม/]];
+const lbIcon={morning:'<svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4v3M4 14H1M23 14h-3M5.6 7.6l2 2M18.4 7.6l-2 2M3 20h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',noon:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',evening:'<svg viewBox="0 0 24 24"><path d="M3 18h18M6 18a6 6 0 0 1 12 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 6V3M6.5 8.5 4.5 6.5M17.5 8.5l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',bed:'<svg viewBox="0 0 24 24"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z" fill="currentColor"/></svg>'};
+const lbO=(on,label,ico='')=>`<span class="lb-o ${on?'on':''}"><i></i>${label}${ico?`<em>${ico}</em>`:''}</span>`;
+labelMarkup=(function(prev){return function(v,size='80x120',layout={top:12,font:11}){const f=labelFormat(size);if(!f.bag)return prev(v,size,layout);const p=patient(v.patientId);const top=Number.isFinite(layout.top)?Math.min(40,Math.max(0,layout.top)):12;const font=[10,11,12,13,14].includes(layout.font)?layout.font:11;
+  return (v.labels||[]).flatMap((l,n)=>{if(!l.selected)return [];const i=v.items[n],b=db.batches.find(b=>b.id===i.batchId),u=parseUsage(l.usage);const warns=(l.warning||'').split(' · ').map(x=>x.trim()).filter(Boolean);const std=LB_WARN.map(([t,re])=>[t,warns.some(w=>re.test(w))]);const others=warns.filter(w=>!LB_WARN.some(([,re])=>re.test(w)));const oral=!u.route||u.route==='รับประทาน';
+    return Array.from({length:l.copies},()=>`<article class="medlabel medicine-bag lb2" style="--label-w:${f.width}mm;--label-h:${f.height}mm;--bag-top:${top}mm;--bag-font:${font}pt"><div class="label-content">
+<header class="lb-head"><div class="lb-brand"><img src="${LOGO}" alt=""><div><b>คลินิกนราทิพย์การพยาบาลและการผดุงครรภ์</b><small>${esc(db.settings.address||'')}${db.settings.phone?' · โทร. '+esc(db.settings.phone):''}</small></div></div></header>
+<div class="lb-row"><span class="lb-f grow"><label>ชื่อผู้รับบริการ <small>Name</small></label><b>${esc(p.name)}</b></span><span class="lb-f"><label>วันที่ <small>Date</small></label><b>${beDate(v.date)}</b></span></div>
+<div class="lb-row"><span class="lb-f grow"><label>ชื่อยา <small>Drug</small></label><b class="lb-drug">${esc(l.title)}</b></span><span class="lb-f"><label>จำนวน <small>Qty</small></label><b>${i.qty} ${esc(i.unit)}</b></span></div>
+<div class="lb-row"><span class="lb-f grow"><label>${oral?'รับประทาน':esc(u.route)} <small>Take</small></label><b>ครั้งละ <u>${esc(u.dose||'....')}</u> ${esc(u.unit||'')}${u.perDay?` &nbsp;วันละ <u>${esc(u.perDay)}</u> ครั้ง`:u.once?' &nbsp;ครั้งเดียว':''}</b></span></div>
+<div class="lb-meal">${lbO(u.meal==='ก่อนอาหาร','ก่อนอาหาร <small>Before meal</small>')}${lbO(u.meal==='หลังอาหาร'||u.meal==='หลังอาหารทันที','หลังอาหาร <small>After meal</small>')}</div>
+<div class="lb-times">${lbO(u.times.includes('เช้า'),'เช้า <small>Morning</small>',lbIcon.morning)}${lbO(u.times.includes('กลางวัน'),'กลางวัน <small>Noon</small>',lbIcon.noon)}${lbO(u.times.includes('เย็น'),'เย็น <small>Evening</small>',lbIcon.evening)}${lbO(u.times.includes('ก่อนนอน'),'ก่อนนอน <small>Bedtime</small>',lbIcon.bed)}</div>
+<div class="lb-row lb-when"><span>ทุก <u>${esc(u.every||'......')}</u> ชั่วโมง</span><span>${lbO(u.symptom,'เวลามีอาการ <small>When needed</small>')}</span>${u.extra?`<span class="lb-extra">${esc(u.extra)}</span>`:''}</div>
+<div class="lb-warn">${std.map(([t,on])=>lbO(on,t)).join('')}${lbO(others.length>0,'อื่น ๆ '+(others.length?`<span class="lb-oth">${esc(others.join(' / '))}</span>`:'..........'))}</div>
+<div class="lb-band">แพ้ยา · ตั้งครรภ์ · ให้นมบุตร · มีโรคประจำตัว กรุณาแจ้งพยาบาล</div>
+<footer class="lb-foot"><span>ผู้จ่ายยา <b>${esc(v.provider||'')}</b></span><span>หมดอายุ <b>${b?beDate(b.exp):'—'}</b> · ล็อต ${esc(i.lot)}</span></footer>
+</div></article>`)}).join('')}})(labelMarkup);
+
+// ---------- OPD card 1 หน้า A4 ----------
+printOPD=function(id){const p=patient(id);if(!p)return;const vs=db.visits.filter(v=>v.patientId===p.id&&!v.void).sort((a,b)=>b.date.localeCompare(a.date));const MAX=7;const show=vs.slice(0,MAX);const al=p.allergy&&!/^(ไม่มี|ไม่พบ|ไม่ทราบ|ปฏิเสธ|-)/.test(p.allergy.trim());const cell=(l,v,cls='')=>`<div class="oc ${cls}"><small>${l}</small><span>${v||'—'}</span></div>`;
+  const rx=v=>(v.prescriptions&&v.prescriptions.length?v.prescriptions.map(x=>`${esc(x.name)}${x.strength&&!x.name.toLowerCase().includes(x.strength.toLowerCase())?' '+esc(x.strength):''}`):v.items.map(i=>esc(i.name))).map((s,k)=>s+(v.items[k]?` ×${v.items[k].qty}`:'')).join(', ');
+  printDoc(`<div class="opd1"><div class="oh"><img src="${LOGO}" alt=""><div class="ohc"><b>คลินิกนราทิพย์การพยาบาลและการผดุงครรภ์</b><span>${esc(db.settings.address||'')}${db.settings.phone?' · โทร. '+esc(db.settings.phone):''}</span><span class="oht">บัตรบันทึกผู้ป่วยนอก · OPD Card</span></div><div class="ohn"><small>เลขประจำตัวผู้รับบริการ (HN)</small><b>${esc(p.hn)}</b><small>ลงทะเบียน ${beDate(p.created)}</small></div></div>
+<div class="ogrid">${cell('ชื่อ–สกุล',`<b>${esc(p.name)}</b>`,'w2')}${cell('วันเกิด / อายุ',p.dob?beDate(p.dob)+(age(p.dob)?' ('+age(p.dob)+')':''):'')}${cell('เพศ',esc(p.sex))}${cell('โทรศัพท์',esc(p.phone))}${cell('เลขบัตรประชาชน',esc(p.citizenId||''))}${cell('สิทธิการรักษา',esc(p.coverage||''))}${cell('หน่วยบริการประจำ',esc(p.hospital||''))}${cell('ที่อยู่',esc(p.address),'w3')}${cell('ผู้ติดต่อฉุกเฉิน',[p.emergencyName,p.emergencyPhone].filter(Boolean).map(esc).join(' · '))}${cell('โรคประจำตัว / ประวัติสำคัญ',esc(p.chronic),'w2')}${cell('ประวัติเจ็บป่วยในอดีต',esc(p.pastHistory||''),'w2')}</div>
+<div class="oalg ${al?'bad':''}"><b>ประวัติแพ้ยา / สารที่แพ้:</b> ${esc(p.allergy||'ยังไม่ได้บันทึก')}</div>
+<h3 class="osec">ประวัติการรับบริการ <span>${vs.length} ครั้ง${vs.length>MAX?` · แสดง ${MAX} ครั้งล่าสุด (ทั้งหมดดูได้ในระบบ)`:''}</span></h3>
+<table class="ot"><thead><tr><th style="width:19mm">วันที่</th><th style="width:32mm">บริการ / อาการสำคัญ</th><th style="width:28mm">สัญญาณชีพ</th><th style="width:30mm">การประเมิน / วินิจฉัย</th><th>การพยาบาล คำแนะนำ และยา</th><th style="width:21mm">ผู้บันทึก</th></tr></thead><tbody>${show.map(v=>`<tr><td>${beDate(v.date)}${v.startTime?`<br><small>${esc(v.startTime)}${v.endTime?'–'+esc(v.endTime):''}</small>`:''}</td><td><b>${esc(v.service)}</b><br>${esc(v.symptom)}</td><td>${esc(v.vitals||'—')}</td><td>${esc(v.diagnosis||v.assessment||'—')}${v.woundType?`<br><small>แผล: ${esc([v.woundLocation,v.woundType,v.woundSize].filter(Boolean).join(' · '))}</small>`:''}</td><td>${esc(v.care)}${v.followup?`<br><small>${esc(v.followup.replace(/\n/g,' · ').slice(0,160))}</small>`:''}${v.items.length?`<br><small><b>ยา:</b> ${rx(v)}</small>`:''}${v.followupDate?`<br><small>นัด ${beDate(v.followupDate)}</small>`:''}${v.referral?`<br><small>ส่งต่อ ${esc(v.referral)}</small>`:''}</td><td>${esc(v.provider)}<br><small>฿${money(v.revenue)}</small></td></tr>`).join('')||'<tr><td colspan="6" style="text-align:center">ยังไม่มีประวัติการรับบริการ</td></tr>'}${Array.from({length:Math.max(0,3-show.length)}).map(()=>'<tr class="blank"><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>').join('')}</tbody></table>
+<div class="ofoot"><span>ผู้บันทึก/พยาบาลผู้ให้บริการ ..................................................</span><span>พิมพ์เมื่อ ${new Date().toLocaleString('th-TH-u-ca-buddhist',{timeZone:'Asia/Bangkok'})} · เอกสารข้อมูลสุขภาพ โปรดเก็บรักษาเป็นความลับ${demo?' · ข้อมูลทดลอง':''}</span></div></div>`)};
 
 </script></body></html>
 
