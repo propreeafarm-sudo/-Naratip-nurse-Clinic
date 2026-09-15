@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th"><head><meta name="clinic-release" content="3.3-20260915"><!-- GitHub Pages entry: index.html. Keep this name when uploading. --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1668c7"><title>คลินิกนราทิพย์การพยาบาล | ระบบบริหารคลินิก</title>
+<html lang="th"><head><meta name="clinic-release" content="3.4-20260915"><!-- GitHub Pages entry: index.html. Keep this name when uploading. --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1668c7"><title>คลินิกนราทิพย์การพยาบาล | ระบบบริหารคลินิก</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--blue-900:#0b3a6b;--blue-700:#0f56a3;--blue-600:#1668c7;--blue-500:#1f7ae0;--blue-400:#3b93ef;--sky:#3fb5f5;--blue-100:#dcecfb;--blue-50:#eef5fc;--bg:#f2f7fc;--white:#fff;--ink:#0f2a44;--muted:#5c7189;--line:#dbe6f1;--line-soft:#e9f0f7;--green:#0f9d6e;--green-bg:#e4f6ee;--amber:#c97a00;--amber-bg:#fff3dc;--red:#d3405c;--red-bg:#fdebef;--shadow:0 1px 2px rgba(15,42,68,.04),0 6px 18px rgba(15,42,68,.06);--shadow-lg:0 18px 50px rgba(11,58,107,.18);--radius:16px}
@@ -305,6 +305,43 @@ dialog:has(.pinkform) .modalhead h2{color:#b8235a}
 .pinkform .primary:hover{background:#b8235a;border-color:#b8235a}
 .pinkform .badge.info{background:#ffe4ef;color:#b8235a}
 @media(max-width:820px){.pinkform .triple{grid-template-columns:1fr 1fr}}
+</style><style id="v34-style">
+/* v3.4 wizard */
+dialog:has(.wizard){width:min(920px,96vw)}
+.wizard>.wstep{display:none;animation:wfade .2s ease}
+.wizard>.wstep.active{display:block}
+@keyframes wfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.wstepper{display:flex;align-items:center;gap:4px;margin:2px 0 18px;padding:12px 10px;background:#fff8fb;border:1px solid #f7d5e2;border-radius:14px}
+.wdot{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:5px;padding:2px 6px;color:#a57286;font-size:12px;min-width:74px;transition:color .15s}
+.wnum{width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid #f0c4d5;color:#c78aa3;display:grid;place-items:center;font-weight:700;font-size:13px;transition:all .2s}
+.wdot.active .wnum{background:#e0457b;border-color:#e0457b;color:#fff;box-shadow:0 6px 14px rgba(224,69,123,.35);transform:scale(1.08)}
+.wdot.active{color:#9c1f4f;font-weight:600}
+.wdot.done .wnum{background:#ffe4ef;border-color:#e0457b;color:#b8235a}
+.wdot.done .wnum::before{content:"✓"}
+.wdot.done .wnum{font-size:0}.wdot.done .wnum::before{font-size:13px}
+.wline{flex:1;height:2px;background:#f0c4d5;border-radius:2px;margin-bottom:22px}
+.wline.done{background:#e0457b}
+.wtitle{margin:0 0 14px;padding-bottom:10px;border-bottom:1px solid #f7d5e2}
+.wtitle h3{font-size:18px;color:#9c1f4f}
+.wtitle p{color:#a57286;font-size:13px;margin-top:2px}
+.wbody{min-height:260px;align-content:start}
+.wizard .wgroup{grid-column:1/-1;border:1px solid #f7d5e2;border-left:4px solid #f0a0bf;border-radius:12px;padding:10px 14px 12px;margin:4px 0;background:#fffafc}
+.wizard .wgroup>summary{cursor:pointer;color:#9c1f4f;margin-bottom:8px;list-style:none}
+.wizard .wgroup>summary::before{content:"▾ ";color:#e0457b}
+.wizard .wgroup:not([open])>summary::before{content:"▸ "}
+.wizard .wgroup .cols{gap:10px 14px}
+.wizard .timebox{grid-column:auto}
+.wnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;padding-top:14px;border-top:1px solid #f7d5e2;position:sticky;bottom:-22px;background:#fff;padding-bottom:6px}
+.wnav .btn{padding:10px 18px}
+.review{background:linear-gradient(135deg,#fff0f6,#fff);border:1px solid #f7d5e2;border-radius:14px;padding:16px;margin-bottom:6px}
+.rvgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+.rvgrid>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.rvgrid small{color:#a57286;font-size:12px}
+.rvgrid b{font-weight:600;color:#4a2a38;overflow-wrap:anywhere}
+.rvwide{grid-column:1/-1}
+.rvlist{margin:4px 0 0;padding-left:18px}
+.rvlist li{margin-bottom:4px}
+@media(max-width:820px){.wdot{min-width:0;padding:2px}.wlab{display:none}.wline{margin-bottom:0}.rvgrid{grid-template-columns:1fr}.wbody{min-height:0}.wnav{flex-wrap:wrap}}
 </style><style id="labelPageStyle"></style><style>.medlabel.medicine-bag{padding:var(--bag-top) 5mm 5mm;font-size:var(--bag-font);line-height:1.4}.medicine-bag .label-content{display:flex;flex-direction:column}.medicine-bag .label-content>*{flex-shrink:0}.medicine-bag .label-brand{font-size:10pt}.medicine-bag .drug-title{font-size:calc(var(--bag-font) + 1pt)}.medicine-bag .label-footer{margin-top:auto;padding-top:1mm}.label-patient,.label-warning{overflow-wrap:anywhere}
 @media print{html,body{margin:0!important}body.label-print .printarea{margin:0!important}body.label-print .printarea .medlabel p{margin:1mm 0;font-size:inherit;line-height:inherit}body.label-print .printarea .medlabel .label-meta{font-size:8pt}body.label-print .printarea .medlabel .drug-title{font-size:11pt}body.label-print .printarea .medicine-bag .drug-title{font-size:calc(var(--bag-font) + 1pt)}body.label-print .printarea .medlabel .label-brand img{width:6mm;height:6mm}body.label-print .medlabel{box-shadow:none}body.label-a4 .printarea{justify-content:start}body.label-print{background:#fff}}
 
@@ -343,7 +380,7 @@ dialog:has(.pinkform) .modalhead h2{color:#b8235a}
     <div class="brand"><img id="brandLogo" alt="โลโก้คลินิก"><div><strong>คลินิกนราทิพย์</strong><small>การพยาบาลและการผดุงครรภ์</small></div></div>
     <div class="navlabel">เมนูหลัก</div>
     <nav id="nav"></nav>
-    <div class="sidefoot"><strong>คลินิกนราทิพย์การพยาบาล</strong>ระบบบริหารคลินิก v3.3 · 15/09/2569<div id="sidesync" class="syncpill"><i></i><span>กำลังเชื่อมต่อ</span></div></div>
+    <div class="sidefoot"><strong>คลินิกนราทิพย์การพยาบาล</strong>ระบบบริหารคลินิก v3.4 · 15/09/2569<div id="sidesync" class="syncpill"><i></i><span>กำลังเชื่อมต่อ</span></div></div>
   </aside>
   <div>
     <header class="topbar">
@@ -1153,6 +1190,41 @@ patientForm=(function(prev){return function(id){prev(id);const form=$('#modalBod
     const cov=inner.querySelector('[name="coverage"]');if(cov){cov.setAttribute('list','coverageList');cov.insertAdjacentHTML('afterend',`<datalist id="coverageList">${COVERAGES.filter(c=>c!=='อื่น ๆ').map(c=>`<option value="${c}">`).join('')}</datalist>`)}
     const cid=inner.querySelector('[name="citizenId"]');if(cid){cid.setAttribute('inputmode','numeric');cid.setAttribute('maxlength','17');cid.placeholder='x-xxxx-xxxxx-xx-x'}}
 }})(patientForm);
+
+</script>
+<script id="clinic-v34">
+'use strict';
+// ===== v3.4 : บันทึก OPD แบบแบ่งหน้า 5 ขั้นตอน =====
+const WIZ_STEPS=[['ข้อมูลทั่วไป','ผู้รับบริการ อาการสำคัญ และสัญญาณชีพ'],['วินิจฉัย','การตรวจ ประเมิน และบันทึกแผล'],['จ่ายยา','เลือกยาและเวชภัณฑ์จากคลัง พร้อมวิธีใช้'],['การพยาบาล','กิจกรรมการพยาบาล คำแนะนำ ส่งต่อ และนัดหมาย'],['รับเงิน','ค่าบริการ สรุปรายการ และยืนยัน']];
+let wizCur=0;
+visitForm=(function(prev){return function(pid){prev(pid);const form=$('#visitForm');if(form)buildWizard(form)}})(visitForm);
+function buildWizard(form){form.classList.add('wizard');form.querySelectorAll('.fsec').forEach(x=>x.remove());
+  const by=n=>form.querySelector(`[name="${n}"]`)?.closest('label.field');
+  const secs=WIZ_STEPS.map((s,i)=>{const el=document.createElement('section');el.className='wstep';el.dataset.step=i;el.innerHTML=`<div class="wtitle"><h3>${s[0]}</h3><p>${s[1]}</p></div><div class="cols wbody"></div>`;return el});
+  const body=i=>secs[i].querySelector('.wbody');
+  [by('patientId'),form.querySelector('#allergyInfo'),form.querySelector('.triple'),by('service'),by('symptom'),form.querySelector('.vsbox')].filter(Boolean).forEach(e=>body(0).append(e));
+  form.querySelector('.vsbox')?.insertAdjacentHTML('afterbegin','<div class="rxlabel" style="margin:2px 0 6px;font-weight:600;color:#9c1f4f">สัญญาณชีพ <span class="muted" style="font-weight:400">(กรอกเฉพาะที่วัดได้)</span></div>');
+  const adv=form.querySelector('details.advanced'),blocks=adv?[...adv.querySelectorAll('details.record')]:[];blocks.forEach(b=>{b.open=true;b.classList.add('wgroup')});
+  [by('assessment'),blocks[0],blocks[1]].filter(Boolean).forEach(e=>body(1).append(e));
+  [form.querySelector('.drugpick'),form.querySelector('#drugRows'),[...form.querySelectorAll('button')].find(b=>/เพิ่มรายการจากคลัง/.test(b.textContent))].filter(Boolean).forEach(e=>body(2).append(e));
+  body(2).insertAdjacentHTML('beforeend','<p class="small muted full" id="wNoDrug" hidden>ยังไม่ได้เลือกยา — ข้ามขั้นตอนนี้ได้ถ้าไม่จ่ายยา</p>');
+  const care=by('care'),advice=care?.nextElementSibling;[care,advice&&advice.classList.contains('full')?advice:null,blocks[2]].filter(Boolean).forEach(e=>body(3).append(e));
+  const total=form.querySelector('#visitTotal'),fees=total?.previousElementSibling,note=total?.nextElementSibling;
+  body(4).innerHTML='<div class="review full" id="wReview"></div>';[fees&&fees.classList.contains('cols')?fees:null,total,note&&note.classList.contains('note')?note:null].filter(Boolean).forEach(e=>{if(e.classList.contains('cols'))e.classList.add('full');body(4).append(e)});
+  adv?.remove();form.querySelectorAll(':scope > .cols, :scope > .sectiontitle').forEach(c=>{if(!c.children.length||c.classList.contains('sectiontitle'))c.remove()});
+  const foot=form.querySelector('.modalfoot');
+  const stepper=document.createElement('div');stepper.className='wstepper';stepper.innerHTML=WIZ_STEPS.map((s,i)=>`<button type="button" class="wdot" data-go="${i}" onclick="wizGo(${i})"><span class="wnum">${i+1}</span><span class="wlab">${s[0]}</span></button>`).join('<i class="wline"></i>');
+  const nav=document.createElement('div');nav.className='wnav';nav.innerHTML=`<button type="button" class="btn" onclick="closeModal()">ยกเลิก</button><span class="wcount small muted"></span><div class="row" style="gap:8px"><button type="button" class="btn" id="wPrev" onclick="wizGo(wizCur-1)">← ย้อนกลับ</button><button type="button" class="btn primary" id="wNext" onclick="wizGo(wizCur+1)">ถัดไป →</button><button type="submit" class="btn primary" id="wSubmit" hidden>✓ ยืนยันรับเงินและบันทึก</button></div>`;
+  form.prepend(stepper);secs.forEach(s=>foot.before(s));foot.replaceWith(nav);
+  form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'&&wizCur<WIZ_STEPS.length-1){e.preventDefault();wizGo(wizCur+1)}});
+  wizCur=0;wizShow(0)}
+function wizValid(i){const sec=$(`#visitForm .wstep[data-step="${i}"]`);if(!sec)return true;for(const f of sec.querySelectorAll('input,select,textarea')){if(f.disabled||f.type==='hidden')continue;if(!f.checkValidity()){f.reportValidity();f.focus();return false}}if(i===0){const sys=sec.querySelector('[name=bpSys]')?.value,dia=sec.querySelector('[name=bpDia]')?.value;if((sys&&!dia)||(dia&&!sys)){notify('กรอกความดันโลหิตให้ครบทั้งตัวบนและตัวล่าง');return false}}if(i===2){for(const row of sec.querySelectorAll('.drugline.rx'))if(!checkedValues(row,'rxRoute').length){row.scrollIntoView({block:'center'});notify('เลือกวิธีใช้ยาให้ครบทุกรายการ');return false}}return true}
+function wizGo(i){const n=WIZ_STEPS.length;if(i<0||i>=n)return;if(i>wizCur){for(let k=wizCur;k<i;k++)if(!wizValid(k)){wizShow(k);return}}wizCur=i;wizShow(i)}
+function wizShow(i){wizCur=i;const form=$('#visitForm');if(!form)return;form.querySelectorAll('.wstep').forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===i));form.querySelectorAll('.wdot').forEach((d,k)=>{d.classList.toggle('active',k===i);d.classList.toggle('done',k<i)});form.querySelectorAll('.wline').forEach((l,k)=>l.classList.toggle('done',k<i));$('#wPrev').disabled=i===0;$('#wNext').hidden=i===WIZ_STEPS.length-1;$('#wSubmit').hidden=i!==WIZ_STEPS.length-1;$('#visitForm .wcount').textContent=`ขั้นตอน ${i+1} / ${WIZ_STEPS.length}`;const nd=$('#wNoDrug');if(nd)nd.hidden=!!$$('.drugline').length;if(i===WIZ_STEPS.length-1)wizReview();$('#modal').scrollTo?.({top:0});form.closest('.modalbody')?.scrollTo?.({top:0});setTimeout(()=>form.querySelector('.wstep.active input:not([type=hidden]):not([readonly]),.wstep.active select,.wstep.active textarea')?.focus({preventScroll:true}),0)}
+function wizReview(){const form=$('#visitForm'),g=n=>form.querySelector(`[name="${n}"]`)?.value||'';const p=patient(g('patientId'));const rows=$$('.drugline').map(r=>{const b=db.batches.find(b=>b.id===r.querySelector('select').value);return b?`<li><b>${esc(batchTitle(b))}</b> × ${r.querySelector('input').value} ${esc(b.unit)}<div class="small muted">${esc(r.querySelector('.rxUsage')?.value||'')}</div></li>`:''}).join('');
+  const vs=[g('bpSys')&&g('bpDia')?'BP '+g('bpSys')+'/'+g('bpDia'):'',g('pulse')?'PR '+g('pulse'):'',g('respiration')?'RR '+g('respiration'):'',g('temperature')?'T '+g('temperature'):'',g('spo2')?'SpO2 '+g('spo2')+'%':'',g('weight')?'น้ำหนัก '+g('weight')+' กก.':''].filter(Boolean).join(' · ');const adv=checkedValues(form,'adviceOpt');
+  $('#wReview').innerHTML=`<div class="rvgrid"><div><small>ผู้รับบริการ</small><b>${esc(p?.name||'—')}</b><span class="muted small">${esc(p?.hn||'')} · ${beDate(g('date'))}</span></div><div><small>บริการ</small><b>${esc(g('service')||'—')}</b><span class="muted small">${esc(g('symptom').slice(0,80))}</span></div><div><small>สัญญาณชีพ</small><b>${esc(vs||'—')}</b></div><div><small>การวินิจฉัย / ประเมิน</small><b>${esc(g('diagnosis')||g('assessment')||'—')}</b></div><div class="rvwide"><small>ยาและเวชภัณฑ์ (${$$('.drugline').length} รายการ)</small>${rows?`<ul class="rvlist">${rows}</ul>`:'<b>ไม่มีการจ่ายยา</b>'}</div><div class="rvwide"><small>การพยาบาลและคำแนะนำ</small><b>${esc(g('care')||'—')}</b><span class="muted small">${adv.length?'คำแนะนำ '+adv.length+' ข้อ':''}${g('followupDate')?' · นัด '+beDate(g('followupDate')):''}${g('referral')?' · ส่งต่อ '+esc(g('referral')):''}</span></div></div><p class="small muted" style="margin-top:8px">ตรวจสอบแล้วกรอกค่าบริการด้านล่าง กด “ยืนยันรับเงินและบันทึก” ระบบจะตัดคลังยาและลงรายรับทันที</p>`}
+// ปรับสุดท้าย: ถ้าเปิดฟอร์มจากรายชื่อผู้ป่วยแล้วกดถัดไปโดยไม่กรอกอาการ ให้ระบบเตือนที่ช่องนั้น (ใช้ reportValidity ปกติ)
 
 </script></body></html>
 
