@@ -307,6 +307,9 @@ dialog:has(.pinkform) .modalhead h2{color:#b8235a}
 @media(max-width:820px){.pinkform .triple{grid-template-columns:1fr 1fr}}
 </style><style id="v34-style">
 /* v3.4 wizard */
+.wizard .field.invalid input,.wizard .field.invalid select,.wizard .field.invalid textarea{border-color:#d3405c!important;box-shadow:0 0 0 3px rgba(211,64,92,.18)!important}
+.wizard .field.invalid{color:#b8235a}
+.wizard .wstep.active .field[class]:has([required])::after{content:""}
 dialog:has(.wizard){width:min(920px,96vw)}
 .wizard>.wstep{display:none;animation:wfade .2s ease}
 .wizard>.wstep.active{display:block}
@@ -380,7 +383,7 @@ dialog:has(.wizard){width:min(920px,96vw)}
     <div class="brand"><img id="brandLogo" alt="โลโก้คลินิก"><div><strong>คลินิกนราทิพย์</strong><small>การพยาบาลและการผดุงครรภ์</small></div></div>
     <div class="navlabel">เมนูหลัก</div>
     <nav id="nav"></nav>
-    <div class="sidefoot"><strong>คลินิกนราทิพย์การพยาบาล</strong>ระบบบริหารคลินิก v3.4 · 15/09/2569<div id="sidesync" class="syncpill"><i></i><span>กำลังเชื่อมต่อ</span></div></div>
+    <div class="sidefoot"><strong>คลินิกนราทิพย์การพยาบาล</strong>ระบบบริหารคลินิก v3.4.1 · 15/09/2569<div id="sidesync" class="syncpill"><i></i><span>กำลังเชื่อมต่อ</span></div></div>
   </aside>
   <div>
     <header class="topbar">
@@ -1218,8 +1221,10 @@ function buildWizard(form){form.classList.add('wizard');form.querySelectorAll('.
   form.prepend(stepper);secs.forEach(s=>foot.before(s));foot.replaceWith(nav);
   form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'&&wizCur<WIZ_STEPS.length-1){e.preventDefault();wizGo(wizCur+1)}});
   wizCur=0;wizShow(0)}
-function wizValid(i){const sec=$(`#visitForm .wstep[data-step="${i}"]`);if(!sec)return true;for(const f of sec.querySelectorAll('input,select,textarea')){if(f.disabled||f.type==='hidden')continue;if(!f.checkValidity()){f.reportValidity();f.focus();return false}}if(i===0){const sys=sec.querySelector('[name=bpSys]')?.value,dia=sec.querySelector('[name=bpDia]')?.value;if((sys&&!dia)||(dia&&!sys)){notify('กรอกความดันโลหิตให้ครบทั้งตัวบนและตัวล่าง');return false}}if(i===2){for(const row of sec.querySelectorAll('.drugline.rx'))if(!checkedValues(row,'rxRoute').length){row.scrollIntoView({block:'center'});notify('เลือกวิธีใช้ยาให้ครบทุกรายการ');return false}}return true}
-function wizGo(i){const n=WIZ_STEPS.length;if(i<0||i>=n)return;if(i>wizCur){for(let k=wizCur;k<i;k++)if(!wizValid(k)){wizShow(k);return}}wizCur=i;wizShow(i)}
+function wizFieldLabel(f){const lab=f.closest('label.field');const t=lab?[...lab.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('').replace(/\*/g,'').trim():'';return t||f.getAttribute('placeholder')||f.name||'ช่องที่จำเป็น'}
+function wizMark(f,msg){$$('#visitForm .invalid').forEach(x=>x.classList.remove('invalid'));const lab=f.closest('label.field')||f;lab.classList.add('invalid');try{lab.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}try{f.focus({preventScroll:true})}catch(e){}notify(msg);try{f.reportValidity()}catch(e){}}
+function wizValid(i){const sec=$(`#visitForm .wstep[data-step="${i}"]`);if(!sec)return true;for(const f of sec.querySelectorAll('input,select,textarea')){if(f.disabled||f.type==='hidden'||f.closest('[hidden]'))continue;if(f.required&&!String(f.value).trim()){wizMark(f,'กรุณากรอก “'+wizFieldLabel(f)+'” ก่อนไปขั้นตอนถัดไป');return false}if(!f.checkValidity()){wizMark(f,(f.validationMessage||'ข้อมูลไม่ถูกต้อง')+' — '+wizFieldLabel(f));return false}}if(i===0){const sys=sec.querySelector('[name=bpSys]')?.value,dia=sec.querySelector('[name=bpDia]')?.value;if((sys&&!dia)||(dia&&!sys)){wizMark(sec.querySelector(sys?'[name=bpDia]':'[name=bpSys]'),'กรอกความดันโลหิตให้ครบทั้งตัวบนและตัวล่าง');return false}}if(i===2){for(const row of sec.querySelectorAll('.drugline.rx'))if(!checkedValues(row,'rxRoute').length){row.scrollIntoView({block:'center'});notify('เลือกวิธีใช้ยาให้ครบทุกรายการ');return false}}$$('#visitForm .invalid').forEach(x=>x.classList.remove('invalid'));return true}
+function wizGo(i){try{const n=WIZ_STEPS.length;if(i<0||i>=n)return;if(i>wizCur){for(let k=wizCur;k<i;k++)if(!wizValid(k)){wizShow(k);return}}wizCur=i;wizShow(i)}catch(e){console.error(e);notify('ไปขั้นตอนถัดไปไม่ได้: '+e.message)}}
 function wizShow(i){wizCur=i;const form=$('#visitForm');if(!form)return;form.querySelectorAll('.wstep').forEach(s=>s.classList.toggle('active',Number(s.dataset.step)===i));form.querySelectorAll('.wdot').forEach((d,k)=>{d.classList.toggle('active',k===i);d.classList.toggle('done',k<i)});form.querySelectorAll('.wline').forEach((l,k)=>l.classList.toggle('done',k<i));$('#wPrev').disabled=i===0;$('#wNext').hidden=i===WIZ_STEPS.length-1;$('#wSubmit').hidden=i!==WIZ_STEPS.length-1;$('#visitForm .wcount').textContent=`ขั้นตอน ${i+1} / ${WIZ_STEPS.length}`;const nd=$('#wNoDrug');if(nd)nd.hidden=!!$$('.drugline').length;if(i===WIZ_STEPS.length-1)wizReview();$('#modal').scrollTo?.({top:0});form.closest('.modalbody')?.scrollTo?.({top:0});setTimeout(()=>form.querySelector('.wstep.active input:not([type=hidden]):not([readonly]),.wstep.active select,.wstep.active textarea')?.focus({preventScroll:true}),0)}
 function wizReview(){const form=$('#visitForm'),g=n=>form.querySelector(`[name="${n}"]`)?.value||'';const p=patient(g('patientId'));const rows=$$('.drugline').map(r=>{const b=db.batches.find(b=>b.id===r.querySelector('select').value);return b?`<li><b>${esc(batchTitle(b))}</b> × ${r.querySelector('input').value} ${esc(b.unit)}<div class="small muted">${esc(r.querySelector('.rxUsage')?.value||'')}</div></li>`:''}).join('');
   const vs=[g('bpSys')&&g('bpDia')?'BP '+g('bpSys')+'/'+g('bpDia'):'',g('pulse')?'PR '+g('pulse'):'',g('respiration')?'RR '+g('respiration'):'',g('temperature')?'T '+g('temperature'):'',g('spo2')?'SpO2 '+g('spo2')+'%':'',g('weight')?'น้ำหนัก '+g('weight')+' กก.':''].filter(Boolean).join(' · ');const adv=checkedValues(form,'adviceOpt');
